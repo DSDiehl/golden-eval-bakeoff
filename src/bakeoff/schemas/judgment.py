@@ -167,7 +167,7 @@ class BakeOffReport(BaseModel):
         description="Unique evaluation run identifier."
     )
     account_id: str = Field(
-        description="Customer or account identifier (e.g., okta, zoominfo)."
+        description="Customer or account identifier (e.g., enterprise_isv, acme_corp)."
     )
     timestamp: str = Field(
         description="ISO 8601 timestamp of report generation."

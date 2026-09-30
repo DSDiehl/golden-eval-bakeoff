@@ -32,12 +32,12 @@ def test_w3c_trace_header_injection() -> None:
 def test_pii_redaction_email_phone_and_keys() -> None:
     """Criterion #16: Active scrubbing masks sensitive customer PII."""
     raw_text = (
-        "User alice.smith@okta.com contacted support at +1-415-555-0199 using API key "
+        "User alice.smith@example.com contacted support at +1-415-555-0199 using API key "
         "AIzaSyD-TEST-KEY-123456789012345 and token Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9."
     )
     redacted = redact_pii_text(raw_text)
 
-    assert "alice.smith@okta.com" not in redacted
+    assert "alice.smith@example.com" not in redacted
     assert "[REDACTED_EMAIL]" in redacted
     assert "415-555-0199" not in redacted
     assert "[REDACTED_PHONE]" in redacted
@@ -49,9 +49,9 @@ def test_pii_redaction_email_phone_and_keys() -> None:
 def test_pii_dict_redaction() -> None:
     """Criterion #16: Recursive dictionary PII scrubbing."""
     data = {
-        "user_email": "admin@zoominfo.com",
+        "user_email": "admin@example.com",
         "nested": {"phone": "650-253-0000"},
-        "tags": ["normal_tag", "contact: john@gitlab.com"],
+        "tags": ["normal_tag", "contact: john@example.com"],
     }
     cleaned = redact_pii_dict(data)
 

@@ -44,7 +44,7 @@ def run_demo() -> None:
     print("🤖 STARTING GOLDEN EVAL & MODEL BAKE-OFF AGENT (AI IN 5 DAYS SUBMISSION)")
     print("=" * 80)
 
-    account_id = "okta"
+    account_id = "enterprise_isv"
     stated_monthly_volume = 1_000_000
     candidate_models = ["gemini-3.8-flash", "gemini-3.1-pro-preview", "claude-sonnet-5"]
     corpus_file = Path(__file__).parent / "sample_corpus" / "security_policy_corpus.json"
@@ -203,7 +203,7 @@ def run_demo() -> None:
         print(f"{s.rank:<5} | {s.candidate_model:<22} | {s.overall_quality_score:<14.2f} | ${s.projected_monthly_tco_usd:<13,.2f} | {rec}")
 
     print("\n✓ Evaluation data staged for BigQuery sync (dataset: model_bakeoff_telemetry.eval_results)")
-    print("✓ Domain taxonomy and golden set saved to Memory Bank for account 'okta'")
+    print(f"✓ Domain taxonomy and golden set saved to Memory Bank for account '{account_id}'")
     print("=" * 80)
 
 

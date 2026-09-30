@@ -22,7 +22,7 @@ def synthesize_eval_cases_for_capability(
     evaluation dimensions.
 
     Args:
-        capability_id: Unique capability identifier (e.g. 'OKTA_AUTHZ_POLICY').
+        capability_id: Unique capability identifier (e.g. 'AUTHZ_POLICY_CORE').
         capability_name: Human-readable name of the capability.
         target_count: Number of cases to synthesize. Valid range is 1 to 10. Defaults to 3.
         difficulty: Difficulty band ('basic', 'intermediate', 'adversarial').
@@ -198,7 +198,7 @@ def promote_to_canonical_golden_set(
 
     Args:
         cases: List of validated EvalCase dictionaries to promote.
-        account_id: Customer or ISV identifier (e.g., 'okta', 'zoominfo').
+        account_id: Customer or ISV identifier (e.g., 'enterprise_isv', 'acme_corp').
         approver_ldap: Google LDAP of the Customer Engineer approving the dataset.
 
     Returns:

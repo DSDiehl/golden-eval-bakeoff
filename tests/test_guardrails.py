@@ -15,7 +15,7 @@ def test_hitl_gate_blocks_golden_set_promotion_without_human_approval() -> None:
     gate = HumanApprovalGate()
     args = {
         "cases": [{"case_id": "CASE_1"}],
-        "account_id": "okta",
+        "account_id": "enterprise_isv",
         "approver_ldap": "marcusdiehl",
     }
 
@@ -30,12 +30,12 @@ def test_hitl_gate_blocks_golden_set_promotion_without_human_approval() -> None:
 def test_hitl_gate_permits_execution_after_approval_granted() -> None:
     """Criterion #12: Tool executes normally once human approval is explicitly granted."""
     gate = HumanApprovalGate()
-    action_key = "promote_golden_set:okta"
+    action_key = "promote_golden_set:enterprise_isv"
     gate.grant_approval(action_key)
 
     args = {
         "cases": [{"case_id": "CASE_1"}],
-        "account_id": "okta",
+        "account_id": "enterprise_isv",
         "approver_ldap": "marcusdiehl",
     }
     result = gate.before_tool_callback(promote_to_canonical_golden_set, args)

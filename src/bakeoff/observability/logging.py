@@ -45,7 +45,7 @@ def get_logger(name: str = "bakeoff", **initial_context: Any) -> structlog.Bound
 
     Args:
         name: Logger name component.
-        **initial_context: Key-value metadata (e.g. run_id='RUN_123', account_id='okta').
+        **initial_context: Key-value metadata (e.g. run_id='RUN_123', account_id='enterprise_account').
 
     Returns:
         Structured bound logger.

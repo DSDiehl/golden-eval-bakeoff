@@ -89,12 +89,12 @@ flowchart TD
 
 Every enterprise model-selection engagement across strategic ISV portfolios stalls at the same place: **the absence of a defensible, representative evaluation dataset**.
 
-| Account | Engagement | Failure Mode / Where it Stalled |
+| Domain Archetype | Evaluation Scope | Failure Mode / Where it Stalled |
 |---|---|---|
-| **Okta** | Gemini 3.8 Flash Cyber Evaluation | *"Our team is in the process of curating a golden eval dataset — will get back to you in a month."* |
-| **ZoomInfo** | Model Eval & TCO Connect | Agenda stalled trying to reconstruct empirical token volumes before quality could be debated. |
-| **GitLab** | 3.8 Flash Cyber / AI Gateway | Multi-vendor bake-off separately negotiated without standardized scoring rubrics. |
-| **HubSpot** | Speech-to-Text / Transcribe Eval | Evaluation blocked by customer data residency constraints on raw corpus egress. |
+| **Identity & Security Platform** | Enterprise Model Evaluation | *"Our team is in the process of curating a golden eval dataset — will get back to you in a month."* |
+| **B2B Intelligence & Data ISV** | Model Eval & TCO Connect | Agenda stalled trying to reconstruct empirical token volumes before quality could be debated. |
+| **DevSecOps & Code Platform** | AI Gateway & Cyber Evaluation | Multi-vendor bake-off separately negotiated without standardized scoring rubrics. |
+| **Customer Communications ISV** | Speech-to-Text & Transcribe Eval | Evaluation blocked by customer data residency constraints on raw corpus egress. |
 
 ### The Solution
 An ADK multi-agent system that industrializes the bake-off. Point it at a sample of a customer's domain corpus and a list of candidate models; it returns:

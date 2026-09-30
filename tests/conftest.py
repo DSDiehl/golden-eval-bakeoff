@@ -19,14 +19,14 @@ def sample_taxonomy() -> list[dict]:
     """Sample capability taxonomy dictionary list."""
     return [
         {
-            "capability_id": "OKTA_AUTHZ_POLICY",
+            "capability_id": "AUTHZ_POLICY",
             "name": "Authorization Policy",
             "description": "Tenant authorization evaluation.",
             "priority": "critical",
             "category": "security",
         },
         {
-            "capability_id": "OKTA_ADVERSARIAL_BYPASS",
+            "capability_id": "ADVERSARIAL_BYPASS",
             "name": "Bypass Defense",
             "description": "Defense against privilege escalation.",
             "priority": "high",
@@ -39,8 +39,8 @@ def sample_taxonomy() -> list[dict]:
 def sample_eval_case() -> dict:
     """Sample valid EvalCase dictionary."""
     return {
-        "case_id": "CASE_OKTA_001",
-        "capability": "OKTA_AUTHZ_POLICY",
+        "case_id": "CASE_AUTHZ_001",
+        "capability": "AUTHZ_POLICY",
         "prompt": "Evaluate user permission for role 'viewer'.",
         "expected_behavior": "Deny edit access with 403 Forbidden.",
         "rubric_dimensions": ["accuracy", "safety"],

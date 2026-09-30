@@ -35,7 +35,7 @@ class MemoryBankAdapter:
         """Retrieves prior bake-off baselines, taxonomy, and golden sets for an account.
 
         Args:
-            account_id: Unique account identifier (e.g. 'okta', 'zoominfo').
+            account_id: Unique account identifier (e.g. 'enterprise_security_isv', 'b2b_analytics_isv').
 
         Returns:
             Account state dictionary, or None if no prior engagement exists.
