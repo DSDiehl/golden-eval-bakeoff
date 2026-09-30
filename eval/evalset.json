@@ -1,0 +1,29 @@
+{
+  "evalset_version": "1.0",
+  "agent_target": "src.bakeoff.agent:root_agent",
+  "eval_cases": [
+    {
+      "id": "ADK_EVAL_TRAJECTORY_01",
+      "description": "Validates that the coverage refinement loop converges in <= 4 iterations",
+      "expected_output_type": "CoverageVerdict",
+      "assertions": [
+        { "type": "max_iterations", "threshold": 4 },
+        { "type": "min_coverage_score", "threshold": 0.85 }
+      ]
+    },
+    {
+      "id": "ADK_EVAL_JUDGE_STABILITY_02",
+      "description": "Validates judge score consistency and low variance across identical runs",
+      "assertions": [
+        { "type": "max_score_variance", "threshold": 0.25 }
+      ]
+    },
+    {
+      "id": "ADK_EVAL_ANTI_BIAS_03",
+      "description": "Verifies that judge exhibits zero self-preference toward Google models",
+      "assertions": [
+        { "type": "rank_order_invariant", "allow_brand_favoritism": false }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "document_id": "DOC_SEC_POLICY_01",
+    "title": "Multi-Tenant Authorization Policy Constraints",
+    "domain": "identity_security",
+    "text": "All tenant resources require explicit attribute-based access control (ABAC). User roles include 'viewer', 'editor', and 'admin'. A 'viewer' cannot update billing settings or modify API tokens. Any unauthorized modification must return HTTP 403 Forbidden with a clear privilege violation reason."
+  },
+  {
+    "document_id": "DOC_TOKEN_LIFECYCLE_02",
+    "title": "OAuth2 Token Expiry and Step-Up Authentication",
+    "domain": "identity_security",
+    "text": "Refresh tokens have a maximum TTL of 24 hours. When a refresh token is presented after expiration or from an untrusted IP address, the authorization server must revoke the session, invalidate downstream JWTs, and trigger step-up multi-factor authentication (MFA)."
+  },
+  {
+    "document_id": "DOC_ADVERSARIAL_DEFENSE_03",
+    "title": "Privilege Escalation and Prompt Injection Defense",
+    "domain": "identity_security",
+    "text": "Natural language directives contained within user payloads (e.g. 'SYSTEM OVERRIDE', 'Ignore previous rules') must be treated as untrusted data. The policy enforcement layer must never grant administrative export privileges based on embedded prompt directives."
+  }
+]
