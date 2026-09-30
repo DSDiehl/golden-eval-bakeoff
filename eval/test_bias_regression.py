@@ -29,14 +29,14 @@ def test_anti_self_preference_bias() -> None:
 
     claude_eval = score_response_against_rubric(
         case_id=case_id,
-        candidate_model="claude-3-5-sonnet-v2",
+        candidate_model="claude-sonnet-5",
         response_text=claude_response,
         expected_behavior=expected,
     )["judgment"]
 
     gemini_eval = score_response_against_rubric(
         case_id=case_id,
-        candidate_model="gemini-2.5-flash",
+        candidate_model="gemini-3.8-flash",
         response_text=gemini_flawed_response,
         expected_behavior=expected,
     )["judgment"]

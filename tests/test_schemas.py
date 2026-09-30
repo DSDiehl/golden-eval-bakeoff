@@ -52,7 +52,7 @@ def test_dimension_score_requires_cited_evidence() -> None:
 
 def test_tco_projection_serialization() -> None:
     proj = TCOProjection(
-        candidate_model="gemini-2.5-flash",
+        candidate_model="gemini-3.8-flash",
         cost_per_1k_interactions_usd=0.045,
         projected_monthly_cost_usd=225.0,
         stated_monthly_volume=5_000_000,

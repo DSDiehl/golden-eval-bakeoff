@@ -12,21 +12,21 @@ from typing import Any
 # Pro models for reasoning-heavy, low-volume planning, profiling, critique, and judging.
 # Flash models for high-volume, structured synthesis, targeted refinement, and cost arithmetic.
 MODEL_ROUTING: dict[str, str] = {
-    "corpus_profiler": "gemini-2.5-pro",
-    "case_synthesizer": "gemini-2.5-flash",
-    "coverage_critic": "gemini-2.5-pro",
-    "case_refiner": "gemini-2.5-flash",
-    "quality_judge": "gemini-2.5-pro",
-    "tco_analyst": "gemini-2.5-flash",
-    "report_composer": "gemini-2.5-pro",
-    "coordinator": "gemini-2.5-pro",
+    "corpus_profiler": "gemini-3.1-pro-preview",
+    "case_synthesizer": "gemini-3.8-flash",
+    "coverage_critic": "gemini-3.1-pro-preview",
+    "case_refiner": "gemini-3.8-flash",
+    "quality_judge": "gemini-3.1-pro-preview",
+    "tco_analyst": "gemini-3.8-flash",
+    "report_composer": "gemini-3.1-pro-preview",
+    "coordinator": "gemini-3.1-pro-preview",
 }
 
 # Default candidate models evaluated in bake-offs
 DEFAULT_CANDIDATES: list[str] = [
-    "gemini-2.5-flash",
-    "gemini-2.5-pro",
-    "claude-3-5-sonnet-v2",
+    "gemini-3.8-flash",
+    "gemini-3.1-pro-preview",
+    "claude-sonnet-5",
 ]
 
 

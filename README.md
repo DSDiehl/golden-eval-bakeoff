@@ -31,9 +31,9 @@ flowchart TD
         end
         
         subgraph Exec["BakeOffRunner (ParallelAgent / A2A Client)"]
-            CandGFlash["CandidateRunner: Gemini 2.5 Flash"]
-            CandGPro["CandidateRunner: Gemini 2.5 Pro"]
-            CandClaude["CandidateRunner: Claude on Vertex"]
+            CandGFlash["CandidateRunner: Gemini 3.8 Flash"]
+            CandGPro["CandidateRunner: Gemini 3.1 Pro Preview"]
+            CandClaude["CandidateRunner: Claude Sonnet 5 on Vertex"]
         end
         
         subgraph Judging["JudgePanel (ParallelAgent)"]

@@ -7,7 +7,7 @@ from src.bakeoff.observability.tracing import inject_w3c_trace_headers, trace_in
 
 def test_structured_logger_context_binding() -> None:
     """Criterion #13: Structured JSON logging binds operational metadata."""
-    log = get_logger("test", run_id="RUN_101", candidate_model="gemini-2.5-pro")
+    log = get_logger("test", run_id="RUN_101", candidate_model="gemini-3.1-pro-preview")
     assert log is not None
 
 

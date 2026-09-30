@@ -46,7 +46,7 @@ def run_demo() -> None:
 
     account_id = "okta"
     stated_monthly_volume = 1_000_000
-    candidate_models = ["gemini-2.5-flash", "gemini-2.5-pro", "claude-3-5-sonnet-v2"]
+    candidate_models = ["gemini-3.8-flash", "gemini-3.1-pro-preview", "claude-sonnet-5"]
     corpus_file = Path(__file__).parent / "sample_corpus" / "security_policy_corpus.json"
     if not corpus_file.exists():
         corpus_file = Path("examples/sample_corpus/security_policy_corpus.json")
@@ -199,7 +199,7 @@ def run_demo() -> None:
     print(f"{'Rank':<5} | {'Candidate Model':<22} | {'Quality (1-5)':<14} | {'Monthly TCO':<14} | {'Recommendation'}")
     print("-" * 80)
     for s in standings:
-        rec = "⭐ WINNER: Best TCO/Quality" if s.candidate_model == "gemini-2.5-flash" else "High Quality Alternative"
+        rec = "⭐ WINNER: Best TCO/Quality" if s.candidate_model == "gemini-3.8-flash" else "High Quality Alternative"
         print(f"{s.rank:<5} | {s.candidate_model:<22} | {s.overall_quality_score:<14.2f} | ${s.projected_monthly_tco_usd:<13,.2f} | {rec}")
 
     print("\n✓ Evaluation data staged for BigQuery sync (dataset: model_bakeoff_telemetry.eval_results)")

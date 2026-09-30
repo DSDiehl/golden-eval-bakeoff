@@ -48,7 +48,7 @@ def test_guided_error_handling_rate_limit_429() -> None:
     result = tools.execute_case_against_candidate_model(
         case_id="CASE_RATE_LIMIT_TEST",
         prompt="[TRIGGER_429_RATE_LIMIT] Test scenario",
-        candidate_model="gemini-2.5-pro",
+        candidate_model="gemini-3.1-pro-preview",
     )
     assert result["status"] == "rate_limited"
     assert result["retry_after_s"] == 30
@@ -61,7 +61,7 @@ def test_guided_error_handling_context_overflow() -> None:
     result = tools.execute_case_against_candidate_model(
         case_id="CASE_OVERFLOW_TEST",
         prompt="[TRIGGER_CONTEXT_OVERFLOW] Big prompt",
-        candidate_model="gemini-2.5-pro",
+        candidate_model="gemini-3.1-pro-preview",
     )
     assert result["status"] == "context_overflow"
     assert "guidance" in result

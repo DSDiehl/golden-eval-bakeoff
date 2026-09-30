@@ -16,7 +16,7 @@ def create_candidate_runner_agent(candidate_model: str) -> LlmAgent:
     """Creates a CandidateRunnerAgent dedicated to a specific candidate model.
 
     Args:
-        candidate_model: Model under test (e.g. 'gemini-2.5-flash', 'claude-3-5-sonnet-v2').
+        candidate_model: Model under test (e.g. 'gemini-3.8-flash', 'claude-sonnet-5').
 
     Returns:
         Configured LlmAgent instance.
@@ -29,7 +29,7 @@ def create_candidate_runner_agent(candidate_model: str) -> LlmAgent:
     )
     return LlmAgent(
         name=f"runner_{clean_name}",
-        model="gemini-2.5-flash",
+        model="gemini-3.8-flash",
         instruction=instruction,
         tools=[execute_case_against_candidate_model],
     )

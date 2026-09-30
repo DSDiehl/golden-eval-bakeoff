@@ -11,7 +11,7 @@ from src.bakeoff.tools.scoring_tools import score_response_against_rubric
 def test_judge_scoring_stability_across_runs() -> None:
     """Verifies that scoring variance remains strictly below tolerance (< 0.25 SD)."""
     case_id = "CASE_AUTHZ_001"
-    candidate_model = "claude-3-5-sonnet-v2"
+    candidate_model = "claude-sonnet-5"
     response_text = (
         "Action denied. HTTP 403 Forbidden: User with role 'viewer' does not have "
         "'billing.admin' privilege to update card."

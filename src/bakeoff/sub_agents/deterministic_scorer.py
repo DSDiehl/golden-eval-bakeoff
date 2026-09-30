@@ -21,7 +21,7 @@ def create_deterministic_scorer_agent() -> LlmAgent:
     )
     return LlmAgent(
         name="deterministic_scorer",
-        model="gemini-2.5-flash",
+        model="gemini-3.8-flash",
         instruction=instruction,
         tools=[compute_deterministic_metrics],
         output_schema=DeterministicMetrics,

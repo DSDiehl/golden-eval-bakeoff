@@ -39,7 +39,7 @@ def test_multi_agent_hierarchy_assembly() -> None:
     assert len(pipeline.sub_agents) == 3
 
     # Check Parallel BakeOff Runner
-    runner = build_bakeoff_runner(["gemini-2.5-flash", "claude-3-5-sonnet-v2"])
+    runner = build_bakeoff_runner(["gemini-3.8-flash", "claude-sonnet-5"])
     assert runner.name == "bakeoff_runner"
     assert len(runner.sub_agents) == 2
 

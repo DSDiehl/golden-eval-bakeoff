@@ -28,7 +28,7 @@ def execute_case_against_candidate_model(
         case_id: Unique identifier of the test case.
         prompt: Evaluation prompt text to submit.
         candidate_model: Identifier of the candidate model under test
-            (e.g., 'gemini-2.5-flash', 'gemini-2.5-pro', 'claude-3-5-sonnet-v2').
+            (e.g., 'gemini-3.8-flash', 'gemini-3.1-pro-preview', 'claude-sonnet-5').
         max_output_tokens: Maximum tokens allowed in candidate completion.
             Valid range is 64 to 8192. Defaults to 1024.
         temperature: Sampling temperature for candidate execution.
@@ -84,22 +84,22 @@ def execute_case_against_candidate_model(
     if mock_mode or True:  # Default safe path with real or hermetic fallback
         elapsed_ms = (time.perf_counter() - start_time) * 1000.0 + 120.0
         # Deterministic generation tailored to model and scenario
-        if "gemini-2.5-pro" in candidate_model.lower():
+        if "gemini-3.1-pro" in candidate_model.lower():
             completion = (
-                f"[GEMINI-PRO-RESPONSE] Comprehensive evaluation for {case_id}: "
+                f"[GEMINI-3.1-PRO-RESPONSE] Comprehensive evaluation for {case_id}: "
                 f"Adhering strictly to enterprise policy boundaries. Validated tenant scope, "
                 f"enforced least privilege, and executed verification checklist successfully."
             )
             out_tokens = len(completion.split()) + 15
-        elif "gemini-2.5-flash" in candidate_model.lower():
+        elif "gemini-3.8-flash" in candidate_model.lower():
             completion = (
-                f"[GEMINI-FLASH-RESPONSE] Executed {case_id}. Fast path validation complete. "
+                f"[GEMINI-3.8-FLASH-RESPONSE] Executed {case_id}. Fast path validation complete. "
                 f"Policy boundaries satisfied with minimal latency."
             )
             out_tokens = len(completion.split()) + 10
         elif "claude" in candidate_model.lower():
             completion = (
-                f"[CLAUDE-ON-VERTEX-RESPONSE] Detailed analysis for {case_id}: "
+                f"[CLAUDE-SONNET-5-RESPONSE] Detailed analysis for {case_id}: "
                 f"Strict verification of input constraints completed. Identified edge risks "
                 f"and enforced safe operational parameters."
             )

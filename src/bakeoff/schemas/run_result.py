@@ -48,7 +48,7 @@ class TokenTelemetry(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     candidate_model: str = Field(
-        description="Identifier of the model (e.g., gemini-2.5-flash, claude-3-5-sonnet-v2)."
+        description="Identifier of the model (e.g., gemini-3.8-flash, claude-sonnet-5)."
     )
     sample_size: int = Field(
         ge=1,

@@ -9,21 +9,17 @@ from ..schemas.judgment import TCOProjection
 
 # Published pricing table per 1M tokens (USD)
 MODEL_PRICING_TABLE: dict[str, dict[str, float]] = {
-    "gemini-2.5-flash": {
+    "gemini-3.8-flash": {
         "input_per_1m": 0.075,
         "output_per_1m": 0.30,
     },
-    "gemini-2.5-pro": {
+    "gemini-3.1-pro-preview": {
         "input_per_1m": 1.25,
         "output_per_1m": 5.00,
     },
-    "claude-3-5-sonnet-v2": {
+    "claude-sonnet-5": {
         "input_per_1m": 3.00,
         "output_per_1m": 15.00,
-    },
-    "claude-3-5-haiku": {
-        "input_per_1m": 0.80,
-        "output_per_1m": 4.00,
     },
 }
 
@@ -32,7 +28,7 @@ def get_model_pricing_tier(model_name: str) -> dict[str, Any]:
     """Retrieves published pricing rates per million tokens for a candidate model.
 
     Args:
-        model_name: Model identifier (e.g., 'gemini-2.5-flash', 'claude-3-5-sonnet-v2').
+        model_name: Model identifier (e.g., 'gemini-3.8-flash', 'claude-sonnet-5').
 
     Returns:
         A dictionary containing:

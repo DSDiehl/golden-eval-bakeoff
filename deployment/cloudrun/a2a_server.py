@@ -35,7 +35,7 @@ async def execute_bakeoff_handler(request: Request) -> JSONResponse:
             body = {}
 
         account_id = body.get("account_id", "unknown")
-        candidate_models = body.get("candidate_models", ["gemini-2.5-flash"])
+        candidate_models = body.get("candidate_models", ["gemini-3.8-flash"])
         span.set_attribute("bakeoff.account_id", account_id)
 
         logger.info("a2a_bakeoff_request_received", account_id=account_id, models=candidate_models)
